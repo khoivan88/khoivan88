@@ -27,11 +27,31 @@ I am an organic chemist who writes apps and creates websites!!
 - [https://doyouknowwhenyouwillgraduate.netlify.app/](https://doyouknowwhenyouwillgraduate.netlify.app/): a fun little website for any graduate student dealing with people keep asking them when they will graduate.
 - [https://open-enventory.gitbook.io/user-guides/](https://open-enventory.gitbook.io/user-guides/): Open Enventory User guides
 
-## A few of apps that I created:
+## A few of softwares/apps that I created:
 
 - [https://github.com/khoivan88/find_sds](https://github.com/khoivan88/find_sds): Find safety data sheet (SDS) for chemicals using their CAS numbers
 - [https://github.com/khoivan88/pka_lookup](https://github.com/khoivan88/pka_lookup): Python script to lookup pKa values, current database of at least 7300 values
 - [https://github.com/khoivan88/open_enventory-modified_for_US](https://github.com/khoivan88/open_enventory-modified_for_US): modified version of Open Enventory, free open-source Chemical Inventory and ELN
+- https://github.com/khoivan88/chemjobber-faculty-jobs-list-automation: Extract chemistry faculty job postings every hour from for different job posting boards, save to csv file and display to google sheet. The script is automatically run with github action every hour to extract job listing and the details of each of the listing. Tech stack: python, scrapy, google sheet API.
+
+## Automation workflows:
+
+1. Chemical inventory workflow automation:
+    
+    Tasks include:
+    - Logging in and extracting (download, csv format) inventory data for the current date in one software
+    - Sanitizing data and Processing data for importing to another software: removing unwanted data, changing the date format, changing CSV format to tab-separated text, extracting some critical info (chemical structures) into their own files.
+    - Logging into another inventory software and importing the newly processed data
+    - Keeping logs for the whole process
+    - Cleaning up log files, data files using dynamic info of available disk size, how old the data, log files are.
+    - Error reporting using email if there is any issue during the whole process
+
+    Challenging:
+    - Web automation requires headless selenium on a remote virtual private server (VPS): much more challenging to set up on a rented virtual private server.
+    - Web automation set up on a VPS with limited CPU and RAM
+    - Cronjob setting up for non-root user (because of selenium) while also performing tasks requiring admin permission.
+
+    ![Solution Program Overview with UML Diagram](https://user-images.githubusercontent.com/33493502/124502455-89649980-dd91-11eb-94ac-ea26d34b3c26.png)
 
 ## My skills and experience include
 
